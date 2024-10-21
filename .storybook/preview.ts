@@ -1,11 +1,45 @@
 import type { Preview } from "@storybook/react";
+import "../src/index.css"; // Import global styles
 
 const preview: Preview = {
   parameters: {
+    actions: { argTypesRegex: "^on[A-Z].*" }, // Matches functions starting with 'on'
     controls: {
       matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
+        color: /(background|color)$/i, // Matches color properties
+        date: /Date$/i, // Matches Date properties
+      },
+    },
+    backgrounds: {
+      default: "light", // Default background color
+      values: [
+        { name: "light", value: "#ffffff" },
+        { name: "dark", value: "#333333" },
+      ],
+    },
+    viewport: {
+      viewports: {
+        mobile: {
+          name: "Mobile",
+          styles: {
+            width: "375px",
+            height: "667px",
+          },
+        },
+        tablet: {
+          name: "Tablet",
+          styles: {
+            width: "768px",
+            height: "1024px",
+          },
+        },
+        desktop: {
+          name: "Desktop",
+          styles: {
+            width: "1024px",
+            height: "768px",
+          },
+        },
       },
     },
   },
