@@ -1,9 +1,12 @@
 import type { Preview } from "@storybook/react";
+import { action } from "@storybook/addon-actions"; // Import the action function
 import "../src/index.css"; // Import global styles
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" }, // Matches functions starting with 'on'
+    actions: {
+      handles: ['mouseover', 'click .btn'], // Example: explicit action handles
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i, // Matches color properties
@@ -11,7 +14,7 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      default: "light", // Default background color
+      default: "light",
       values: [
         { name: "light", value: "#ffffff" },
         { name: "dark", value: "#333333" },
