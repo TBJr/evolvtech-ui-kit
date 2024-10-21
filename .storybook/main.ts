@@ -2,7 +2,7 @@ import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
   stories: [
-    "../src/**/*.mdx",
+    "../src/**/*.mdx", // Supports MDX files
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   addons: [
@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-onboarding",
+    "@storybook/addon-docs", // Added for MDX support
     "@chromatic-com/storybook", // For Chromatic integration
   ],
   framework: {
@@ -23,7 +24,11 @@ const config: StorybookConfig = {
     // Customize Vite config if needed
     if (configType === "DEVELOPMENT") {
       config.optimizeDeps = {
-        include: ["@storybook/addon-links", "@storybook/addon-essentials"],
+        include: [
+          "@storybook/addon-links",
+          "@storybook/addon-essentials",
+          "@storybook/addon-docs" // Ensures docs are pre-bundled
+        ],
       };
     }
     return config;

@@ -1,0 +1,51 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Getting Started/Introduction" />
+
+# Introduction
+
+Welcome to the **Evolvtech UI Kit**, a component library inspired by the WFP UI Kit. This Storybook contains reusable React components built with TypeScript and styled to match the design system.
+
+## Key Features
+
+- **Component Library**: A collection of reusable React components with consistent styling.
+- **Responsive Design**: Ensures components work across various devices and screen sizes.
+- **Accessible**: Built with accessibility best practices in mind.
+- **Customizable**: Easily adaptable to meet different project requirements.
+
+## Installation
+
+To use this UI Kit in your project, install it via npm:
+
+```bash
+npm install evolvtech-ui-kit
+```
+
+## Usage
+Here's an example of how to use one of the components:
+```bash
+import { Button } from 'evolvtech-ui-kit';
+
+export const App = () => (
+  <Button label="Click me" onClick={() => alert('Button clicked!')} />
+);
+```
+
+Explore the components in the sidebar to learn more!
+### 2. **Add the Story to Storybook**
+   - This `Introduction.stories.mdx` file will automatically be picked up by Storybook based on your configuration in `.storybook/main.ts`.
+
+### 3. **Commit the Changes**
+   - Add and commit the new introduction story:
+```bash
+git add src/stories/Introduction.stories.mdx
+git commit -m "Add introduction page to Storybook"
+```
+
+### 4. **Restart Storybook**
+   - Restart Storybook to see the new introduction page:
+```bash
+npm run storybook
+ ```
+
+This will create a similar introduction page as found in the WFP UI Kit documentation. Let me know if you want to customize it further!
